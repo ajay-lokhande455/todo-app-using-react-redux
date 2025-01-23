@@ -40,7 +40,7 @@ The **Todo App** is a simple and intuitive web application for managing tasks. I
 
 5. Open your browser and visit:
    ```
-  https://todo-app-using-react-redux-pi.vercel.app/
+   https://todo-app-using-react-redux-pi.vercel.app/
    ```
 
 ## Folder Structure
