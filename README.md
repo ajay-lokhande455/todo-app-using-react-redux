@@ -95,14 +95,23 @@ This project is licensed under the [MIT License](LICENSE).
 - 
 ## Screenshots
 
-### Light Theme
-![Light Theme Screenshot](./src/screenshots/home-page-light-theme.png)
+### Light Theme Home page
+![Light Theme homepage Screenshot](./src/screenshots/home-page-light-theme.png)
 
-### Dark Theme
-![Dark Theme Screenshot](./screenshots/dark-theme.png)
+### Dark Theme Home page
+![Dark Theme home page Screenshot](./src/screenshots/home-page-dark-theme.png)
 
-### Todo List
-![Todo List Screenshot](./screenshots/todo-list.png)
+### Light Theme Add Todo Page
+![ add Todo  Screenshot](./src/screenshots/add-todo-ligth-theme.png)
 
-### Add Todo
-![Add Todo Screenshot](./screenshots/add-todo.png)
+### Dark Theme Add Todo page
+![add Todo Screenshot](./src/screenshots/add-todo-dark-theme.png)
+
+### Light Theme Todo List page
+![list Todo Screenshot](./src/screenshots/todo-list-light-theme.png)
+
+### Dark Theme List Todo page
+![list Todo Screenshot](./src/screenshots/todo-list-dark-theme.png)
+
+### Footer
+![Footer Screenshot](./src/screenshots/footer.png)
