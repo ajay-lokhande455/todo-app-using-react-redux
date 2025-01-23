@@ -96,7 +96,7 @@ This project is licensed under the [MIT License](LICENSE).
 ## Screenshots
 
 ### Light Theme
-![Light Theme Screenshot](./screenshots/light-theme.png)
+![Light Theme Screenshot](./src/screenshots/home-page-light-theme.png)
 
 ### Dark Theme
 ![Dark Theme Screenshot](./screenshots/dark-theme.png)
