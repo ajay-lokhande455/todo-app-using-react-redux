@@ -102,7 +102,7 @@ This project is licensed under the [MIT License](LICENSE).
 ![Dark Theme home page Screenshot](./src/screenshots/home-page-dark-theme.png)
 
 ### Light Theme Add Todo Page
-![ add Todo  Screenshot](./screenshots/add-todo-light-theme.png)
+![ add Todo  Screenshot](./screenshots/add-todo-ligth-theme.png)
 
 ### Dark Theme Add Todo page
 ![add Todo Screenshot](./screenshots/add-todo-dark-theme.png)
