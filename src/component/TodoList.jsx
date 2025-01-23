@@ -1,27 +1,14 @@
+// src/components/TodoList.js
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import {
-  Card,
-  CardContent,
-  Typography,
-  CardActions,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  TextField,
-  MenuItem,
-  Box,
-} from "@mui/material";
+import { Box, Button, Card, CardActions, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, MenuItem, TextField, Typography } from "@mui/material";
 import { deleteTodo, toggleTodo, updateTodo } from "../slices/todoSlice";
 import EditIcon from "@mui/icons-material/Edit";
+import Timer from './Timer';  // Import Timer component
 
 const TodoList = () => {
   const todos = useSelector((state) => state.todo.todos);
   const dispatch = useDispatch();
-  
 
   const [open, setOpen] = useState(false);
   const [currentTodo, setCurrentTodo] = useState(null);
@@ -71,17 +58,18 @@ const TodoList = () => {
     }
 
     if (currentTodo) {
-      if(confirm('you Want to save the Changes')){
-      dispatch(
-        updateTodo({
-          id: currentTodo.id,
-          title: updatedTitle.trim(),
-          description: updatedDescription.trim(),
-          priority: updatedPriority,
-          dueDate: updatedDueDate,
-          category: updatedCategory,
-        })
-      );}
+      if(confirm('you want to save the changes?')){
+        dispatch(
+          updateTodo({
+            id: currentTodo.id,
+            title: updatedTitle.trim(),
+            description: updatedDescription.trim(),
+            priority: updatedPriority,
+            dueDate: updatedDueDate,
+            category: updatedCategory,
+          })
+        );
+      }
       handleClose();
     }
   };
@@ -135,6 +123,8 @@ const TodoList = () => {
                   <EditIcon />
                 </Button>
               </CardActions>
+               {/* Add Timer component for each todo */}
+               <Timer todoId={todo.id} />
             </Card>
           ))}
         </Box>

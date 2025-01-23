@@ -1,13 +1,14 @@
 # Todo App Using React and Redux
 
 ## Overview
-The **Todo App** is a simple and intuitive web application for managing tasks. It allows users to create, view, and organize their to-do lists efficiently. The application is built using React and Material-UI, providing a clean and responsive interface. Additionally, the app includes a dark mode toggle for better usability in different lighting conditions.
+The **Todo App** is a simple and intuitive web application for managing tasks. It allows users to create, view, and organize their to-do lists efficiently. The application is built using React and Material-UI, providing a clean and responsive interface. Additionally, the app includes a dark mode toggle for better usability in different lighting conditions.It also features a Timer for each Todo item, which helps track the time spent on tasks.
 
 ## Features
 - **Add Todo**: Create new tasks with titles and descriptions.
 - **View Todos**: View a list of all tasks with their statuses (completed/pending).
 - **Mark as Complete**: Mark tasks as completed to keep track of progress.
 - **Delete Todo**: Remove unwanted tasks from the list.
+- **Timer**: Each Todo has an integrated timer that tracks the time spent on the task.
 - **Responsive Design**: Adapts seamlessly to different screen sizes.
 - **Dark Mode**: Toggle between light and dark themes for a personalized experience.
 - **Contact Us**: Integrated contact options via email and WhatsApp.
@@ -16,6 +17,7 @@ The **Todo App** is a simple and intuitive web application for managing tasks. I
 - **Frontend**: React, Material-UI
 - **Routing**: React Router
 - **Icons**: Material-UI Icons
+- **State Management**: Redux (for managing Todo list state)
 
 ## Installation
 1. Clone the repository:
@@ -52,8 +54,12 @@ The **Todo App** is a simple and intuitive web application for managing tasks. I
 │   │   ├── Footer.jsx      // Footer with contact options
 │   │   ├── TodoInput.jsx   // Input field for adding todos
 │   │   ├── TodoList.jsx    // Main Todo List component
+│   │   ├── Timer.jsx       // Timer component for tracking time on each Todo
 │   ├── pages
 │   │   ├── HomePage.jsx    // Home page
+│   ├── slices
+|   |   |── timerSlice.js   // manage the state for timer
+|   |   |── todoSlice.js    // manage the state for todo
 │   ├── App.jsx             // Main application file
 │   ├── index.jsx           // Application entry point
 │   ├── themes.jsx          // Theme configuration
@@ -78,6 +84,7 @@ The **Todo App** is a simple and intuitive web application for managing tasks. I
 - **Homepage**: Displays the header with navigation and an introduction.
 - **Add Todo**: Navigate to `/add-todo` to create a new task.
 - **View Todos**: Navigate to `/todos` to see all tasks with options to edit or delete them.
+- **Timer**: Each Todo has an integrated timer that starts when the Todo item is created and can be viewed on the  Todo list page.
 - **Dark Mode**: Use the toggle button in the header to switch themes.
 
 ## Contact
