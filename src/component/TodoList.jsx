@@ -1,10 +1,22 @@
-// src/components/TodoList.js
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Box, Button, Card, CardActions, CardContent, Dialog, DialogActions, DialogContent, DialogTitle, MenuItem, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  MenuItem,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { deleteTodo, toggleTodo, updateTodo } from "../slices/todoSlice";
 import EditIcon from "@mui/icons-material/Edit";
-import Timer from './Timer';  // Import Timer component
+import Timer from "./Timer";
 
 const TodoList = () => {
   const todos = useSelector((state) => state.todo.todos);
@@ -58,7 +70,7 @@ const TodoList = () => {
     }
 
     if (currentTodo) {
-      if(confirm('you want to save the changes?')){
+      if (confirm("Do you want to save the changes?")) {
         dispatch(
           updateTodo({
             id: currentTodo.id,
@@ -71,6 +83,19 @@ const TodoList = () => {
         );
       }
       handleClose();
+    }
+  };
+
+  const getPriorityColor = (priority) => {
+    switch (priority) {
+      case "High":
+        return "error.main";
+      case "Medium":
+        return "warning.main";
+      case "Low":
+        return "success.main";
+      default:
+        return "text.primary";
     }
   };
 
@@ -91,15 +116,40 @@ const TodoList = () => {
           gap={3}
         >
           {todos.map((todo) => (
-            <Card key={todo.id} sx={{ boxShadow: 5 }}>
+            <Card
+              key={todo.id}
+              sx={{
+                boxShadow: 5,
+                background: (theme) =>
+                  theme.palette.mode === "light"
+                    ? "linear-gradient(to bottom, #f9f9f9, #e0e0e0)"
+                    : "linear-gradient(to bottom, #333, #444)",
+                borderRadius: 2,
+                overflow: "hidden",
+              }}
+            >
               <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: "bold",
+                    color: "text.primary",
+                    textTransform: "capitalize",
+                  }}
+                >
                   {todo.title}
                 </Typography>
                 <Typography variant="body2" sx={{ marginTop: 1 }}>
                   {todo.description || "No additional details available."}
                 </Typography>
-                <Typography variant="body2" sx={{ marginTop: 1 }}>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    marginTop: 1,
+                    color: getPriorityColor(todo.priority),
+                    fontWeight: "bold",
+                  }}
+                >
                   <strong>Priority:</strong> {todo.priority}
                 </Typography>
                 <Typography variant="body2">
@@ -108,23 +158,44 @@ const TodoList = () => {
                 <Typography variant="body2">
                   <strong>Category:</strong> {todo.category}
                 </Typography>
-                <Typography sx={{ color: todo.completed ? "green" : "red", fontWeight: "bold" }}>
+                <Typography
+                  sx={{
+                    color: todo.completed ? "success.main" : "error.main",
+                    fontWeight: "bold",
+                    marginTop: 1,
+                  }}
+                >
                   {todo.completed ? "Completed" : "Not Completed"}
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Button size="small" onClick={() => handleCompleted(todo.id)} variant="outlined" color={todo.completed ? "success" : "warning"}>
+              <CardActions sx={{  }}>
+                <Button
+                  size="small"
+                  onClick={() => handleCompleted(todo.id)}
+                  variant="outlined"
+                  color={todo.completed ? "success" : "warning"}
+                >
                   {todo.completed ? "Mark Incomplete" : "Mark Completed"}
                 </Button>
-                <Button size="small" onClick={() => handleDelete(todo.id)} variant="outlined" color="error">
+                <Button
+                  size="small"
+                  onClick={() => handleDelete(todo.id)}
+                  variant="outlined"
+                  color="error"
+                >
                   Delete
                 </Button>
-                <Button size="small" onClick={() => handleEdit(todo)} variant="outlined">
+                <Button
+                  size="small"
+                  onClick={() => handleEdit(todo)}
+                  variant="outlined"
+                >
                   <EditIcon />
                 </Button>
               </CardActions>
-               {/* Add Timer component for each todo */}
-               <Timer todoId={todo.id} />
+              <Box sx={{ padding: 2 }}>
+                <Timer todoId={todo.id} />
+              </Box>
             </Card>
           ))}
         </Box>
