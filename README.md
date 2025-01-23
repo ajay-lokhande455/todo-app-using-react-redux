@@ -22,7 +22,7 @@ The **Todo App** is a simple and intuitive web application for managing tasks. I
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/todo-app.git
+   git clone https://github.com/ajay-lokhande455/todo-app-using-react-redux.git
    ```
 
 2. Navigate to the project directory:
@@ -42,7 +42,7 @@ The **Todo App** is a simple and intuitive web application for managing tasks. I
 
 5. Open your browser and visit:
    ```
-   http://localhost:3000
+   https://todo-app-using-react-redux-pi.vercel.app/
    ```
 
 ## Folder Structure
