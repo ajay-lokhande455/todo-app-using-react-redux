@@ -92,11 +92,17 @@ This project is licensed under the [MIT License](LICENSE).
 - **Material-UI**: For providing the design components.
 - **React Router**: For enabling routing in the app.
 - **Icons**: Courtesy of Material-UI Icons.
-
+- 
 ## Screenshots
+
 ### Light Theme
-![Light Theme Screenshot](https://via.placeholder.com/800x400)
+![Light Theme Screenshot](./screenshots/light-theme.png)
 
 ### Dark Theme
-![Dark Theme Screenshot](https://via.placeholder.com/800x400)
+![Dark Theme Screenshot](./screenshots/dark-theme.png)
 
+### Todo List
+![Todo List Screenshot](./screenshots/todo-list.png)
+
+### Add Todo
+![Add Todo Screenshot](./screenshots/add-todo.png)
